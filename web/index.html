@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo Rubik 2x2 - Simulador 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+    <div id="ui-container">
+        <!-- Panel Izquierdo: Controles -->
+        <div class="glass-panel main-controls">
+            <h1>Cubo Rubik 2x2</h1>
+            <p class="subtitle">Simulador POO interactivo</p>
+            
+            <div class="control-group" style="display: flex; gap: 10px; align-items: center;">
+                <label style="margin: 0; font-size: 0.9rem;">Mezcla:</label>
+                <select id="scramble-depth" style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: white; border-radius: 4px; padding: 5px;">
+                    <option value="1">1 Mov</option>
+                    <option value="2">2 Movs</option>
+                    <option value="3">3 Movs</option>
+                    <option value="4" selected>4 Movs</option>
+                    <option value="5">5 Movs</option>
+                    <option value="6">6 Movs</option>
+                    <option value="7">7 Movs</option>
+                </select>
+                <button id="btn-scramble" class="btn primary" style="flex: 1;">Desordenar</button>
+            </div>
+            
+            <div class="control-group">
+                <label for="algorithm-select">Algoritmo de Búsqueda:</label>
+                <select id="algorithm-select">
+                    <option value="BFS">BFS (Anchura)</option>
+                    <option value="DFS">DFS (Profundidad Limitada)</option>
+                    <option value="BACKTRACKING">Backtracking (Recursivo)</option>
+                    <option value="HEURISTICO">Búsqueda Heurística (A*)</option>
+                </select>
+                <button id="btn-solve" class="btn success">Resolver (Estándar)</button>
+                <button id="btn-solve-unlimited" class="btn" style="background: #8b5cf6; color: white; margin-top: 5px; font-size: 0.8rem;">Resolver Hasta Encontrar</button>
+                <button id="btn-reset" class="btn" style="background: #ef4444; color: white; margin-top: 5px;">Reiniciar Todo</button>
+            </div>
+        </div>
+
+        <!-- Panel Derecho: Estadísticas y Grafos -->
+        <div class="glass-panel stats-panel">
+            <h2>Datos del Grafo</h2>
+            <div class="stat">
+                <span>Nodos explorados:</span>
+                <span id="stat-nodes">0</span>
+            </div>
+            <div class="stat">
+                <span>Estado:</span>
+                <span id="stat-status">Ordenado</span>
+            </div>
+            <ul id="steps-list"></ul>
+            
+            <details class="nodes-console-container">
+                <summary>Ver Nodos Creados (Consola)</summary>
+                <div id="nodes-console"></div>
+            </details>
+        </div>
+        
+        <!-- Panel Inferior: Grafo Visual -->
+        <div class="glass-panel graph-panel" id="graph-panel-container">
+            <div class="graph-header">
+                <h2>Árbol de Búsqueda</h2>
+                <div class="graph-controls">
+                    <button id="btn-show-path" class="btn success" style="display: none; padding: 0.3rem 0.6rem; font-size: 0.7rem;">Camino ✔</button>
+                    <button id="btn-animate-exploration" class="btn primary" style="display: none; padding: 0.3rem 0.6rem; font-size: 0.7rem; background: #6366f1;">Explorar 🔍</button>
+                    <button id="btn-expand-graph" class="btn" style="padding: 0.3rem 0.6rem; background: rgba(255,255,255,0.1); font-size: 0.7rem;">Ampliar</button>
+                </div>
+            </div>
+            <div id="visual-graph"></div>
+        </div>
+    </div>
+    
+    <div id="canvas-container"></div>
+
+    <!-- Cargar Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="logic.js"></script>
+    <script src="cube3d.js"></script>
+</body>
+</html>
