@@ -1,6 +1,6 @@
 using System;
 
-namespace CuboRubik2x2
+namespace CuboRubik2x2.Modelos
 {
     /* 
      * =========================================================================

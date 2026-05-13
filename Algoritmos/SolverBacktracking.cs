@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace CuboRubik2x2
+using CuboRubik2x2.Modelos;
+using CuboRubik2x2.Estructuras;
+
+namespace CuboRubik2x2.Algoritmos
 {
     /* 
      * =========================================================================
@@ -32,7 +35,7 @@ namespace CuboRubik2x2
             
             visitados.Add(cuboInicial.ObtenerClave());
 
-            Backtrack(nodoInicial, visitados);
+            Backtrack(nodoInicial, visitados, cuboInicial);
 
             if (!encontrado)
             {
@@ -40,7 +43,7 @@ namespace CuboRubik2x2
             }
         }
 
-        private void Backtrack(Nodo actual, HashSet<string> visitados)
+        private void Backtrack(Nodo actual, HashSet<string> visitados, Cubo cuboInicial)
         {
             // Si alguna otra rama recursiva ya lo encontró, detenemos todo para ahorrar cálculos
             if (encontrado) return; 
@@ -50,7 +53,7 @@ namespace CuboRubik2x2
             if (actual.EstadoCubo.EstaResuelto())
             {
                 Console.WriteLine($"!Solucion encontrada! Nodos explorados: {nodosExplorados}");
-                MostrarCamino(actual);
+                MostrarCamino(actual, cuboInicial);
                 encontrado = true;
                 return;
             }
@@ -68,7 +71,7 @@ namespace CuboRubik2x2
                 {
                     visitados.Add(clave); // Hacemos el movimiento
                     
-                    Backtrack(vecino, visitados); // Exploramos recursivamente
+                    Backtrack(vecino, visitados, cuboInicial); // Exploramos recursivamente
                     
                     visitados.Remove(clave); // BACKTRACK: Deshacemos al regresar de la rama
                 }

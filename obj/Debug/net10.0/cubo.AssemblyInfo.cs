@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cubo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8eba87b906b13b29c16490d7d23df5ff9fa7ce0")]
 [assembly: System.Reflection.AssemblyProductAttribute("cubo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cubo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/davidtorrico/Desktop/cubofinal/cubo.csproj",
+      "projectUniqueName": "/Users/davidtorrico/Desktop/CUBO/cubofinal/cubo.csproj",
       "projectName": "cubo",
-      "projectPath": "/Users/davidtorrico/Desktop/cubofinal/cubo.csproj",
+      "projectPath": "/Users/davidtorrico/Desktop/CUBO/cubofinal/cubo.csproj",
       "packagesPath": "/Users/davidtorrico/.nuget/packages/",
-      "outputPath": "/Users/davidtorrico/Desktop/cubofinal/obj/",
+      "outputPath": "/Users/davidtorrico/Desktop/CUBO/cubofinal/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/davidtorrico/.nuget/NuGet/NuGet.Config"

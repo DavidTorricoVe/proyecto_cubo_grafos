@@ -1,4 +1,6 @@
-namespace CuboRubik2x2
+using CuboRubik2x2.Modelos;
+
+namespace CuboRubik2x2.Estructuras
 {
     /* 
      * =========================================================================

@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace CuboRubik2x2
+using CuboRubik2x2.Modelos;
+using CuboRubik2x2.Estructuras;
+
+namespace CuboRubik2x2.Algoritmos
 {
     /* 
      * =========================================================================
@@ -43,7 +46,7 @@ namespace CuboRubik2x2
                 if (actual.EstadoCubo.EstaResuelto())
                 {
                     Console.WriteLine($"!Solucion encontrada! Nodos explorados: {nodosExplorados}");
-                    MostrarCamino(actual);
+                    MostrarCamino(actual, cuboInicial);
                     return;
                 }
 

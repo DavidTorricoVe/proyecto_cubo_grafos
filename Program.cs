@@ -1,4 +1,7 @@
 using System;
+using CuboRubik2x2.Modelos;
+using CuboRubik2x2.Algoritmos;
+using CuboRubik2x2.Estructuras;
 
 namespace CuboRubik2x2
 {
